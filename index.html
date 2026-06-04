@@ -409,6 +409,119 @@
     color:rgba(255,255,255,0.25);font-size:12px;
   }
 
+  /* ── CART BUTTON IN NAV ── */
+  .cart-nav-btn{
+    position:relative;background:rgba(168,230,96,0.15);border:1px solid rgba(168,230,96,0.4);
+    color:var(--accent);padding:8px 18px;border-radius:25px;cursor:pointer;
+    font-weight:800;font-size:13px;display:flex;align-items:center;gap:6px;transition:.2s;
+  }
+  .cart-nav-btn:hover{background:rgba(168,230,96,0.3);}
+  .cart-count{
+    background:var(--g4);color:#fff;font-size:10px;font-weight:900;
+    width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    position:absolute;top:-6px;right:-6px;
+  }
+  .cart-count.hidden{display:none}
+
+  /* ── CART DRAWER ── */
+  .cart-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1100;
+    opacity:0;pointer-events:none;transition:.3s;backdrop-filter:blur(4px);
+  }
+  .cart-overlay.open{opacity:1;pointer-events:all;}
+  .cart-drawer{
+    position:fixed;top:0;right:-420px;width:420px;max-width:100vw;height:100%;
+    background:linear-gradient(180deg,#0d2e06,#061a02);
+    z-index:1200;transition:.35s cubic-bezier(.4,0,.2,1);
+    display:flex;flex-direction:column;
+    border-left:1px solid rgba(168,230,96,0.15);
+    box-shadow:-20px 0 60px rgba(0,0,0,0.5);
+  }
+  .cart-drawer.open{right:0;}
+  .cart-header{
+    padding:20px 24px;border-bottom:1px solid rgba(168,230,96,0.1);
+    display:flex;align-items:center;justify-content:space-between;
+    background:rgba(168,230,96,0.05);
+  }
+  .cart-header h3{color:#fff;font-size:18px;font-weight:800;}
+  .cart-header span{color:var(--accent);font-size:13px;}
+  .cart-close{
+    background:rgba(255,255,255,0.08);border:none;color:#fff;
+    width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer;transition:.2s;
+  }
+  .cart-close:hover{background:rgba(255,255,255,0.15);}
+  .cart-items{flex:1;overflow-y:auto;padding:16px 24px;}
+  .cart-items::-webkit-scrollbar{width:4px;}
+  .cart-items::-webkit-scrollbar-track{background:rgba(255,255,255,0.05);}
+  .cart-items::-webkit-scrollbar-thumb{background:var(--g3);border-radius:4px;}
+  .cart-empty{
+    text-align:center;padding:60px 20px;color:rgba(255,255,255,0.3);
+  }
+  .cart-empty div{font-size:50px;margin-bottom:12px;}
+  .cart-empty p{font-size:15px;}
+  .cart-item{
+    display:flex;gap:14px;align-items:center;
+    padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .cart-item img{width:60px;height:60px;object-fit:contain;border-radius:10px;background:rgba(168,230,96,0.08);padding:6px;}
+  .cart-item-info{flex:1;}
+  .cart-item-info h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:3px;}
+  .cart-item-info .item-price{color:var(--accent);font-weight:800;font-size:14px;}
+  .qty-ctrl{display:flex;align-items:center;gap:8px;margin-top:8px;}
+  .qty-btn{
+    background:rgba(168,230,96,0.15);border:1px solid rgba(168,230,96,0.3);
+    color:var(--accent);width:26px;height:26px;border-radius:6px;
+    font-size:16px;font-weight:800;cursor:pointer;transition:.2s;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .qty-btn:hover{background:var(--g3);color:#fff;}
+  .qty-num{color:#fff;font-weight:800;font-size:14px;min-width:20px;text-align:center;}
+  .remove-btn{background:none;border:none;color:rgba(255,100,100,0.6);cursor:pointer;font-size:18px;padding:4px;transition:.2s;}
+  .remove-btn:hover{color:rgba(255,100,100,1);}
+  .cart-footer{
+    padding:20px 24px;border-top:1px solid rgba(168,230,96,0.1);
+    background:rgba(0,0,0,0.3);
+  }
+  .cart-total{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-bottom:16px;
+  }
+  .cart-total span:first-child{color:rgba(255,255,255,0.6);font-size:14px;font-weight:600;}
+  .cart-total .total-amt{color:var(--accent);font-size:24px;font-weight:900;}
+  .cart-checkout-form{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;}
+  .cart-input{
+    padding:11px 14px;background:rgba(255,255,255,0.06);
+    border:1px solid rgba(168,230,96,0.2);border-radius:10px;
+    color:#fff;font-family:inherit;font-size:13px;transition:.2s;
+  }
+  .cart-input:focus{outline:none;border-color:var(--accent);background:rgba(168,230,96,0.08);}
+  .cart-input::placeholder{color:rgba(255,255,255,0.25);}
+  .checkout-btn{
+    width:100%;background:linear-gradient(135deg,#25d366,#1aa34a);
+    color:#fff;border:none;padding:15px;border-radius:30px;
+    font-size:15px;font-weight:900;cursor:pointer;transition:.2s;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    box-shadow:0 6px 20px rgba(37,211,102,0.4);
+  }
+  .checkout-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,0.6);}
+  .checkout-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+
+  /* ── ADD TO CART BTN ── */
+  .card-btns{display:flex;gap:8px;align-items:center;}
+  .add-cart-btn{
+    background:linear-gradient(135deg,var(--g3),var(--g4));
+    color:#fff;border:none;padding:9px 14px;border-radius:20px;
+    font-weight:800;font-size:12px;cursor:pointer;transition:.2s;
+    box-shadow:0 4px 15px rgba(82,194,46,0.3);flex:1;
+  }
+  .add-cart-btn:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(82,194,46,0.5);}
+  .quick-wa-btn{
+    background:rgba(37,211,102,0.15);border:1px solid rgba(37,211,102,0.4);
+    color:#25d366;padding:9px 12px;border-radius:20px;
+    font-size:14px;cursor:pointer;transition:.2s;
+  }
+  .quick-wa-btn:hover{background:#25d366;color:#fff;}
+
   /* ── WA FLOAT ── */
   .wa{
     position:fixed;bottom:28px;right:28px;
@@ -463,6 +576,39 @@
 </head>
 <body>
 
+<!-- CART OVERLAY + DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <div>
+      <h3>🛒 Your Cart</h3>
+      <span id="cartSubtitle">0 items</span>
+    </div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <div>🛒</div>
+      <p>Your cart is empty<br>Add products to order</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total">
+      <span>Total Amount</span>
+      <span class="total-amt" id="cartTotal">₹0</span>
+    </div>
+    <div class="cart-checkout-form">
+      <input class="cart-input" id="cName" type="text" placeholder="Your Full Name *" required>
+      <input class="cart-input" id="cPhone" type="tel" placeholder="Phone Number * (+91 XXXXXXXXXX)" required>
+      <input class="cart-input" id="cCity" type="text" placeholder="Your City *" required>
+      <input class="cart-input" id="cAddress" type="text" placeholder="Delivery Address (optional)">
+    </div>
+    <button class="checkout-btn" onclick="checkoutWhatsApp()">
+      💬 Order via WhatsApp — Main Office
+    </button>
+  </div>
+</div>
+
 <canvas id="bg"></canvas>
 
 <!-- NAV -->
@@ -478,6 +624,7 @@
     <li><a href="#order">Order</a></li>
   </ul>
   <a href="tel:+919592512000" class="nav-cta">📞 Call Now</a>
+  <button class="cart-nav-btn" onclick="openCart()">🛒 Cart <span class="cart-count hidden" id="cartCount">0</span></button>
   <button class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')">
     <span></span><span></span><span></span>
   </button>
@@ -544,7 +691,7 @@
         <div class="card-body">
           <h3>Aloe Premium Plus</h3><div class="size">500 ml · Herbs, Fruits &amp; Berries</div>
           <p class="desc">Aloe Vera blended with herbs and berries for immunity, digestion and total vitality.</p>
-          <div class="card-foot"><span class="price">₹703</span><button class="ord-btn" onclick="pickProduct('Aloe Premium Plus (500ml) - ₹703')">Order</button></div>
+          <div class="card-foot"><span class="price">₹703</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Aloe Premium Plus','₹703',703,'images/aloe-premium-plus.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Aloe Premium Plus (500ml) - ₹703')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -555,7 +702,7 @@
         <div class="card-body">
           <h3>Noni Ultra Premium Plus</h3><div class="size">500 ml · 15 Super Herbs</div>
           <p class="desc">Health &amp; Brain Booster for students and adults — energy, focus &amp; mental clarity.</p>
-          <div class="card-foot"><span class="price">₹713</span><button class="ord-btn" onclick="pickProduct('Noni Ultra Premium Plus (500ml) - ₹713')">Order</button></div>
+          <div class="card-foot"><span class="price">₹713</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Noni Ultra Premium Plus','₹713',713,'images/noni-ultra-premium.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Noni Ultra Premium Plus (500ml) - ₹713')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -566,7 +713,7 @@
         <div class="card-body">
           <h3>10+ DB Control</h3><div class="size">500 ml · 10 Powerful Herbs</div>
           <p class="desc">Formulated with 10 powerful herbs to naturally control blood sugar levels.</p>
-          <div class="card-foot"><span class="price">₹713</span><button class="ord-btn" onclick="pickProduct('10+ DB Control (500ml) - ₹713')">Order</button></div>
+          <div class="card-foot"><span class="price">₹713</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('10+ DB Control','₹713',713,'images/db-control.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('10+ DB Control (500ml) - ₹713')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -577,7 +724,7 @@
         <div class="card-body">
           <h3>Pachn Ras</h3><div class="size">500 ml · Feel Light</div>
           <p class="desc">Herbal digestive tonic — controls poor digestion, keeps you light and energetic.</p>
-          <div class="card-foot"><span class="price">₹375</span><button class="ord-btn" onclick="pickProduct('Pachn Ras (500ml) - ₹375')">Order</button></div>
+          <div class="card-foot"><span class="price">₹375</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Pachn Ras','₹375',375,'images/pachn-ras.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Pachn Ras (500ml) - ₹375')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -588,7 +735,7 @@
         <div class="card-body">
           <h3>Premium Wheatgrass Powder</h3><div class="size">105 gm · Natural Multivitamin</div>
           <p class="desc">Green powder of nature — packed with chlorophyll, vitamins, and minerals.</p>
-          <div class="card-foot"><span class="price">₹1,200</span><button class="ord-btn" onclick="pickProduct('Premium Wheatgrass Powder (105gm) - ₹1200')">Order</button></div>
+          <div class="card-foot"><span class="price">₹1,200</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Wheatgrass Powder','₹1200',1200,'images/wheatgrass-powder.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Premium Wheatgrass Powder (105gm) - ₹1200')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -599,7 +746,7 @@
         <div class="card-body">
           <h3>Premium Curcumin</h3><div class="size">Capsule · With Piperine</div>
           <p class="desc">Antioxidant, Detoxifier &amp; Anti-inflammatory with piperine for max absorption.</p>
-          <div class="card-foot"><span class="price">₹600</span><button class="ord-btn" onclick="pickProduct('Premium Curcumin (Capsule) - ₹600')">Order</button></div>
+          <div class="card-foot"><span class="price">₹600</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Premium Curcumin','₹600',600,'images/premium-curcumin.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Premium Curcumin (Capsule) - ₹600')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -610,7 +757,7 @@
         <div class="card-body">
           <h3>5 Tulsi Drops</h3><div class="size">50 ml · Immunity Booster</div>
           <p class="desc">Blend of 5 Tulsi varieties for immunity, stress relief &amp; respiratory health.</p>
-          <div class="card-foot"><span class="price">₹300</span><button class="ord-btn" onclick="pickProduct('5 Tulsi Drops (50ml) - ₹300')">Order</button></div>
+          <div class="card-foot"><span class="price">₹300</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('5 Tulsi Drops','₹300',300,'images/pachn-ras.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('5 Tulsi Drops (50ml) - ₹300')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -621,7 +768,7 @@
         <div class="card-body">
           <h3>Uridetox Capsule</h3><div class="size">Capsule · Kidney &amp; UTI Support</div>
           <p class="desc">Herbal formula to detoxify the urinary system and support kidney health.</p>
-          <div class="card-foot"><span class="price">₹550</span><button class="ord-btn" onclick="pickProduct('Uridetox Capsule - ₹550')">Order</button></div>
+          <div class="card-foot"><span class="price">₹550</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Uridetox Capsule','₹550',550,'images/premium-curcumin.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Uridetox Capsule - ₹550')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -632,7 +779,7 @@
         <div class="card-body">
           <h3>Ortho Care Pain Relief Oil</h3><div class="size">30 ml / 100 ml</div>
           <p class="desc">Fast-acting herbal oil for joints, muscles &amp; back pain — penetrates deeply.</p>
-          <div class="card-foot"><span class="price">₹225</span><button class="ord-btn" onclick="pickProduct('Ortho Care Pain Relief Oil - ₹225')">Order</button></div>
+          <div class="card-foot"><span class="price">₹225</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Ortho Care Pain Oil','₹225',225,'images/ortho-care-oil.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Ortho Care Pain Relief Oil - ₹225')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -643,7 +790,7 @@
         <div class="card-body">
           <h3>Ortho Specialist</h3><div class="size">Capsule · Joint Support</div>
           <p class="desc">Advanced herbal capsule for joint health, bone strength &amp; arthritis relief.</p>
-          <div class="card-foot"><span class="price">₹550</span><button class="ord-btn" onclick="pickProduct('Ortho Specialist (Capsule) - ₹550')">Order</button></div>
+          <div class="card-foot"><span class="price">₹550</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Ortho Specialist','₹550',550,'images/ortho-care-oil.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Ortho Specialist (Capsule) - ₹550')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -654,7 +801,7 @@
         <div class="card-body">
           <h3>KB Hair Oil</h3><div class="size">100 ml · Keratin Booster</div>
           <p class="desc">Strengthens roots, reduces breakage and adds deep shine with natural keratin.</p>
-          <div class="card-foot"><span class="price">₹275</span><button class="ord-btn" onclick="pickProduct('KB Hair Oil (100ml) - ₹275')">Order</button></div>
+          <div class="card-foot"><span class="price">₹275</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('KB Hair Oil','₹275',275,'images/hair-care.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('KB Hair Oil (100ml) - ₹275')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -665,7 +812,7 @@
         <div class="card-body">
           <h3>Scalp Therapy Shampoo</h3><div class="size">200 ml · Aloe Vera + Herbs</div>
           <p class="desc">2-in-1 shampoo + conditioner for all hair types — silky, strong hair.</p>
-          <div class="card-foot"><span class="price">₹250</span><button class="ord-btn" onclick="pickProduct('Scalp Therapy Shampoo (200ml) - ₹250')">Order</button></div>
+          <div class="card-foot"><span class="price">₹250</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Scalp Therapy Shampoo','₹250',250,'images/hair-care.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Scalp Therapy Shampoo (200ml) - ₹250')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -676,7 +823,7 @@
         <div class="card-body">
           <h3>Aloe Aroma Face Wash</h3><div class="size">100 ml · Age-Defence</div>
           <p class="desc">Pore tightening with day &amp; night protection from acne, dirt &amp; pollution.</p>
-          <div class="card-foot"><span class="price">₹150</span><button class="ord-btn" onclick="pickProduct('Aloe Aroma Face Wash (100ml) - ₹150')">Order</button></div>
+          <div class="card-foot"><span class="price">₹150</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Aloe Aroma Face Wash','₹150',150,'images/aloe-aroma-face-wash.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Aloe Aroma Face Wash (100ml) - ₹150')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -687,7 +834,7 @@
         <div class="card-body">
           <h3>Herbal 55 Skin Lotion</h3><div class="size">15 / 25 ml · Pure Herbs</div>
           <p class="desc">Deeply moisturizes, brightens and protects all skin types naturally.</p>
-          <div class="card-foot"><span class="price">₹225</span><button class="ord-btn" onclick="pickProduct('Herbal 55 Skin Lotion - ₹225')">Order</button></div>
+          <div class="card-foot"><span class="price">₹225</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Herbal 55 Skin Lotion','₹225',225,'images/herbal-55-skin-lotion.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Herbal 55 Skin Lotion - ₹225')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -698,7 +845,7 @@
         <div class="card-body">
           <h3>Rays Block</h3><div class="size">Sun Protection · Skin Brightening</div>
           <p class="desc">Shields against UV rays while improving skin tone and brightening complexion.</p>
-          <div class="card-foot"><span class="price">₹300</span><button class="ord-btn" onclick="pickProduct('Rays Block Sun Protection Lotion - ₹300')">Order</button></div>
+          <div class="card-foot"><span class="price">₹300</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Rays Block Lotion','₹300',300,'images/rays-block.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Rays Block Sun Protection Lotion - ₹300')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -709,7 +856,7 @@
         <div class="card-body">
           <h3>Aloe Vera Skin Gel</h3><div class="size">100 ml</div>
           <p class="desc">Soothes, hydrates and repairs skin — ideal for after-sun care and daily use.</p>
-          <div class="card-foot"><span class="price">₹300</span><button class="ord-btn" onclick="pickProduct('Aloe Vera Skin Gel (100ml) - ₹300')">Order</button></div>
+          <div class="card-foot"><span class="price">₹300</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Aloe Vera Skin Gel','₹300',300,'images/aloe-aroma-face-wash.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Aloe Vera Skin Gel (100ml) - ₹300')" title="WhatsApp">💬</button></div></div>
         </div>
       </div>
     </div>
@@ -933,7 +1080,106 @@ function filt(cat,btn){
   });
 }
 
-/* ── ORDER HELPERS ── */
+/* ── CART SYSTEM ── */
+const MAIN_WA = '919592512000';
+let cart = [];
+
+function addToCart(name, priceStr, price, img) {
+  const existing = cart.find(i => i.name === name);
+  if (existing) { existing.qty++; }
+  else { cart.push({ name, priceStr, price, img, qty: 1 }); }
+  updateCartUI();
+  openCart();
+  showAddedFeedback(name);
+}
+
+function showAddedFeedback(name) {
+  const el = document.createElement('div');
+  el.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#2d8a1a,#52c22e);color:#fff;padding:12px 24px;border-radius:30px;font-weight:800;font-size:14px;z-index:2000;animation:fadeUp .4s ease;box-shadow:0 8px 24px rgba(82,194,46,0.4)';
+  el.textContent = '✅ ' + name + ' added to cart!';
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 2000);
+}
+
+function updateCartUI() {
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const count = cart.reduce((s, i) => s + i.qty, 0);
+  const countEl = document.getElementById('cartCount');
+  countEl.textContent = count;
+  countEl.classList.toggle('hidden', count === 0);
+  document.getElementById('cartSubtitle').textContent = count + ' item' + (count !== 1 ? 's' : '');
+  document.getElementById('cartTotal').textContent = '₹' + total.toLocaleString('en-IN');
+  document.getElementById('cartFooter').style.display = cart.length ? 'block' : 'none';
+  const itemsEl = document.getElementById('cartItems');
+  const emptyEl = document.getElementById('cartEmpty');
+  if (cart.length === 0) { emptyEl.style.display = 'block'; return; }
+  emptyEl.style.display = 'none';
+  const existing = itemsEl.querySelectorAll('.cart-item');
+  existing.forEach(e => e.remove());
+  cart.forEach((item, idx) => {
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <img src="${item.img}" alt="${item.name}">
+      <div class="cart-item-info">
+        <h4>${item.name}</h4>
+        <div class="item-price">${item.priceStr} each</div>
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="changeQty(${idx},-1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${idx},1)">+</button>
+          <span style="color:rgba(255,255,255,0.4);font-size:12px;margin-left:4px">= ₹${(item.price*item.qty).toLocaleString('en-IN')}</span>
+        </div>
+      </div>
+      <button class="remove-btn" onclick="removeItem(${idx})">🗑</button>`;
+    itemsEl.appendChild(div);
+  });
+}
+
+function changeQty(idx, delta) {
+  cart[idx].qty += delta;
+  if (cart[idx].qty <= 0) cart.splice(idx, 1);
+  updateCartUI();
+}
+
+function removeItem(idx) {
+  cart.splice(idx, 1);
+  updateCartUI();
+}
+
+function openCart() {
+  document.getElementById('cartDrawer').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function quickWA(product) {
+  const msg = `🛒 *Quick Order — Pukhraj Health Care*\n\n📦 *Product:* ${product}\n\nPlease confirm my order.`;
+  window.open('https://wa.me/' + MAIN_WA + '?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function checkoutWhatsApp() {
+  const name = document.getElementById('cName').value.trim();
+  const phone = document.getElementById('cPhone').value.trim();
+  const city = document.getElementById('cCity').value.trim();
+  const address = document.getElementById('cAddress').value.trim();
+  if (!name || !phone || !city) { alert('Please fill Name, Phone and City!'); return; }
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  let items = cart.map(i => `  • ${i.name} × ${i.qty} = ₹${(i.price*i.qty).toLocaleString('en-IN')}`).join('\n');
+  const msg = `🛒 *CART ORDER — Pukhraj Health Care*\n\n👤 *Name:* ${name}\n📱 *Phone:* ${phone}\n🏙️ *City:* ${city}${address?'\n🏠 *Address:* '+address:''}\n\n📦 *Order Items:*\n${items}\n\n💰 *Total: ₹${total.toLocaleString('en-IN')}*\n\nPlease confirm my order. Thank you!`;
+  window.open('https://wa.me/' + MAIN_WA + '?text=' + encodeURIComponent(msg), '_blank');
+  cart = [];
+  updateCartUI();
+  closeCart();
+}
+
+/* ── SINGLE PRODUCT ORDER FORM ── */
 function pickProduct(name){
   const s=document.getElementById('fpr');
   for(let i=0;i<s.options.length;i++)if(s.options[i].text===name){s.selectedIndex=i;break}
@@ -948,7 +1194,7 @@ function sendOrder(e){
   const q=document.getElementById('fq').value;
   const a=document.getElementById('fa').value;
   const msg=`🛒 *ORDER — Pukhraj Health Care*\n\n👤 *Name:* ${n}\n📱 *Phone:* ${p}\n🏙️ *City:* ${c}\n📦 *Product:* ${pr}\n📊 *Qty:* ${q}${a?'\n🏠 *Address:* '+a:''}`;
-  window.open('https://wa.me/919592512000?text='+encodeURIComponent(msg),'_blank');
+  window.open('https://wa.me/'+MAIN_WA+'?text='+encodeURIComponent(msg),'_blank');
   e.target.reset();
 }
 
