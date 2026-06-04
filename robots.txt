@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dwivedipranshu963-coder.github.io/Phukraj-health-care-/sitemap.xml
