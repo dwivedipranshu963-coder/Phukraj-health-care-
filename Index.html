@@ -3,274 +3,1076 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pukhraj Health Care</title>
+    <title>Pukhraj Health Care - Pure Herbal Ayurvedic Products</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f5f5f5; }
-        header { background: linear-gradient(135deg, #2d5016 0%, #1a3a0a 100%); color: white; padding: 20px; text-align: center; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .hero { background: linear-gradient(135deg, #2d5016 0%, #1a3a0a 100%); color: white; padding: 50px 20px; text-align: center; }
-        .hero h1 { font-size: 48px; margin-bottom: 20px; }
-        .hero p { font-size: 18px; margin-bottom: 20px; }
-        .buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .btn { padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; }
-        .btn-primary { background: #a8d66e; color: #1a3a0a; }
-        .btn-primary:hover { background: #fff; }
-        .contact-section { background: white; padding: 40px; margin: 30px 0; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .contact-section h2 { color: #2d5016; margin-bottom: 30px; text-align: center; font-size: 32px; }
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-        .contact-card { background: #f9f9f9; padding: 25px; border-radius: 10px; border-top: 4px solid #a8d66e; }
-        .contact-card h3 { color: #2d5016; margin-bottom: 15px; }
-        .contact-card p { color: #666; margin-bottom: 10px; }
-        .contact-card a { color: #a8d66e; text-decoration: none; font-weight: bold; }
-        .products { background: white; padding: 40px; margin: 30px 0; border-radius: 10px; }
-        .products h2 { color: #2d5016; text-align: center; margin-bottom: 30px; font-size: 32px; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .product-card { background: #f9f9f9; padding: 20px; border-radius: 10px; border-top: 4px solid #a8d66e; text-align: center; }
-        .product-card h3 { color: #2d5016; margin-bottom: 10px; }
-        .product-card .price { color: #a8d66e; font-weight: bold; font-size: 20px; margin: 10px 0; }
-        .order-btn { background: #2d5016; color: #a8d66e; border: 2px solid #a8d66e; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: bold; width: 100%; }
-        .order-btn:hover { background: #a8d66e; color: #1a3a0a; }
-        .form-section { background: white; padding: 40px; margin: 30px 0; border-radius: 10px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; color: #2d5016; font-weight: bold; margin-bottom: 8px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-family: Arial; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #a8d66e; }
-        .submit-btn { background: #a8d66e; color: #1a3a0a; border: none; padding: 15px 40px; border-radius: 25px; font-weight: bold; cursor: pointer; width: 100%; font-size: 16px; }
-        .submit-btn:hover { background: #2d5016; color: #a8d66e; }
-        footer { background: #0d1f05; color: white; text-align: center; padding: 30px; margin-top: 30px; }
-        .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 999; }
-        .whatsapp-btn:hover { background: #1ead50; }
-        @media (max-width: 768px) { .hero h1 { font-size: 32px; } .buttons { flex-direction: column; } }
+        :root {
+            --green-dark: #1e4d0f;
+            --green-main: #2d6e1a;
+            --green-mid: #3d8a22;
+            --green-light: #5aab34;
+            --green-pale: #e8f5e1;
+            --green-accent: #a8d66e;
+            --white: #ffffff;
+            --gray-light: #f4f7f0;
+            --gray-mid: #e0e8d8;
+            --gray-text: #555;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --radius: 12px;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--gray-light); color: #333; }
+
+        /* ── NAV ── */
+        nav {
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-logo .logo-leaf { font-size: 28px; }
+        .nav-logo .logo-text { line-height: 1.2; }
+        .nav-logo .logo-text span:first-child { display: block; font-size: 18px; font-weight: 800; color: var(--green-dark); letter-spacing: 0.5px; }
+        .nav-logo .logo-text span:last-child { display: block; font-size: 11px; color: var(--green-mid); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: #444; font-weight: 600; font-size: 14px; transition: color .2s; }
+        .nav-links a:hover { color: var(--green-main); }
+        .nav-cta {
+            background: var(--green-main);
+            color: var(--white);
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: background .2s;
+        }
+        .nav-cta:hover { background: var(--green-dark); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; padding: 4px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--green-dark); border-radius: 2px; transition: .3s; }
+        .mobile-menu { display: none; background: var(--white); border-top: 1px solid var(--gray-mid); padding: 16px 20px; }
+        .mobile-menu.open { display: block; }
+        .mobile-menu a { display: block; padding: 10px 0; color: #444; text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--gray-mid); }
+        .mobile-menu a:last-child { border-bottom: none; }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-main) 50%, var(--green-mid) 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px; right: -50px;
+            width: 300px; height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px; left: -80px;
+            width: 400px; height: 400px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+        }
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(168,214,110,0.25);
+            border: 1px solid var(--green-accent);
+            color: var(--green-accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+        .hero h1 { font-size: 46px; font-weight: 900; line-height: 1.15; margin-bottom: 16px; }
+        .hero h1 span { color: var(--green-accent); }
+        .hero p { font-size: 17px; color: rgba(255,255,255,0.85); margin-bottom: 30px; line-height: 1.6; }
+        .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; }
+        .btn-hero-primary {
+            background: var(--green-accent);
+            color: var(--green-dark);
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 15px;
+            transition: .2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-hero-primary:hover { background: var(--white); }
+        .btn-hero-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.5);
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 15px;
+            transition: .2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-hero-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+        .hero-img-wrap {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .hero-img-wrap img { width: 100%; height: 380px; object-fit: cover; display: block; }
+
+        /* ── TRUST BAR ── */
+        .trust-bar { background: var(--white); padding: 20px; border-bottom: 1px solid var(--gray-mid); }
+        .trust-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .trust-item { display: flex; align-items: center; gap: 10px; color: var(--green-dark); font-weight: 700; font-size: 14px; }
+        .trust-icon { font-size: 22px; }
+
+        /* ── SECTION LAYOUT ── */
+        .section { padding: 60px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 34px; font-weight: 800; color: var(--green-dark); margin-bottom: 10px; }
+        .section-title p { color: var(--gray-text); font-size: 16px; }
+        .section-title .underline { width: 60px; height: 4px; background: var(--green-accent); border-radius: 2px; margin: 12px auto 0; }
+
+        /* ── CATEGORY FILTERS ── */
+        .filters {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+        .filter-btn {
+            padding: 9px 22px;
+            border-radius: 25px;
+            border: 2px solid var(--green-mid);
+            background: var(--white);
+            color: var(--green-mid);
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: .2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--green-main);
+            color: var(--white);
+            border-color: var(--green-main);
+        }
+
+        /* ── PRODUCT GRID ── */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform .25s, box-shadow .25s;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+        .product-card.hidden { display: none; }
+        .product-img-wrap {
+            height: 220px;
+            background: var(--green-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-img-wrap img { max-height: 190px; max-width: 100%; object-fit: contain; transition: transform .3s; }
+        .product-card:hover .product-img-wrap img { transform: scale(1.05); }
+        .product-category-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--green-main);
+            color: var(--white);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 12px;
+            letter-spacing: 0.5px;
+        }
+        .product-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+        .product-body h3 { font-size: 16px; font-weight: 800; color: var(--green-dark); margin-bottom: 4px; }
+        .product-body .size { font-size: 12px; color: #888; margin-bottom: 8px; }
+        .product-body .desc { font-size: 13px; color: var(--gray-text); line-height: 1.5; flex: 1; margin-bottom: 14px; }
+        .product-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .price { font-size: 20px; font-weight: 900; color: var(--green-main); }
+        .order-btn {
+            background: var(--green-main);
+            color: var(--white);
+            border: none;
+            padding: 9px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: .2s;
+            white-space: nowrap;
+        }
+        .order-btn:hover { background: var(--green-dark); }
+
+        /* ── ABOUT ── */
+        .about-section { background: var(--white); }
+        .about-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-img { border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
+        .about-img img { width: 100%; height: 360px; object-fit: cover; display: block; }
+        .about-content h2 { font-size: 34px; font-weight: 800; color: var(--green-dark); margin-bottom: 16px; }
+        .about-content p { color: var(--gray-text); font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+        .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+        .stat-card { background: var(--green-pale); padding: 18px; border-radius: 10px; border-left: 4px solid var(--green-accent); }
+        .stat-card .num { font-size: 28px; font-weight: 900; color: var(--green-dark); }
+        .stat-card .label { font-size: 13px; color: var(--gray-text); font-weight: 600; }
+
+        /* ── CONTACT ── */
+        .contact-section { background: var(--gray-light); }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .contact-card {
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--radius);
+            border-top: 4px solid var(--green-accent);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+        }
+        .contact-card .icon { font-size: 30px; margin-bottom: 12px; }
+        .contact-card h3 { color: var(--green-dark); font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+        .contact-card .role { font-size: 12px; color: var(--green-mid); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .contact-card a { color: var(--green-main); text-decoration: none; font-weight: 700; font-size: 15px; display: block; margin-bottom: 4px; }
+        .contact-card a:hover { color: var(--green-dark); }
+        .contact-card p { color: #888; font-size: 12px; margin-top: 6px; }
+
+        /* ── ORDER FORM ── */
+        .form-section { background: linear-gradient(135deg, var(--green-dark), var(--green-main)); padding: 60px 20px; }
+        .form-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        .form-card h2 { color: var(--green-dark); font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 6px; }
+        .form-card .sub { text-align: center; color: var(--gray-text); font-size: 14px; margin-bottom: 28px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group.full { grid-column: 1 / -1; }
+        .form-group label { font-size: 13px; font-weight: 700; color: var(--green-dark); }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 14px;
+            border: 2px solid var(--gray-mid);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color .2s;
+            background: var(--gray-light);
+            color: #333;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus { outline: none; border-color: var(--green-mid); background: var(--white); }
+        .form-group textarea { resize: vertical; min-height: 90px; }
+        .submit-btn {
+            width: 100%;
+            background: var(--green-main);
+            color: var(--white);
+            border: none;
+            padding: 16px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .submit-btn:hover { background: var(--green-dark); }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--green-dark);
+            color: rgba(255,255,255,0.85);
+            padding: 40px 20px 20px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        .footer-brand .logo-leaf { font-size: 32px; }
+        .footer-brand h3 { color: var(--white); font-size: 20px; font-weight: 800; margin: 8px 0 4px; }
+        .footer-brand p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.7); }
+        footer h4 { color: var(--green-accent); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 8px; }
+        footer ul li a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: color .2s; }
+        footer ul li a:hover { color: var(--green-accent); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ── WHATSAPP FLOAT ── */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25d366;
+            color: var(--white);
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+            z-index: 999;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 25px rgba(37,211,102,0.7); }
+        .whatsapp-pulse {
+            position: absolute;
+            top: -4px; right: -4px;
+            width: 16px; height: 16px;
+            background: #ff4444;
+            border-radius: 50%;
+            border: 2px solid var(--white);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.3); } }
+
+        /* ── CALL BANNER ── */
+        .call-banner {
+            background: var(--green-pale);
+            border-top: 3px solid var(--green-accent);
+            padding: 12px 20px;
+        }
+        .call-banner-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .call-pill {
+            background: var(--white);
+            color: var(--green-dark);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            text-decoration: none;
+            border: 2px solid var(--green-mid);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: .2s;
+        }
+        .call-pill:hover { background: var(--green-main); color: var(--white); border-color: var(--green-main); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero h1 { font-size: 34px; }
+            .hero-img-wrap { max-width: 500px; margin: 0 auto; }
+            .about-inner { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .nav-links, .nav-cta { display: none; }
+            .hamburger { display: flex; }
+            .hero h1 { font-size: 28px; }
+            .hero p { font-size: 15px; }
+            .hero-btns { justify-content: center; }
+            .hero-img-wrap img { height: 260px; }
+            .trust-inner { gap: 16px; }
+            .trust-item { font-size: 12px; }
+            .section-title h2 { font-size: 26px; }
+            .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+            .product-img-wrap { height: 170px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+            .about-stats { grid-template-columns: 1fr 1fr; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>🌿 PUKHRAJ HEALTH CARE</h1>
-        <p>Pure Herbal Ayurvedic Products</p>
-        <div class="buttons" style="margin-top: 15px;">
-            <a href="tel:+919592512000" class="btn btn-primary">📞 +91 95925 12000</a>
-            <a href="tel:9017323675" class="btn btn-primary">📲 90173 23675</a>
-            <a href="tel:9891690731" class="btn btn-primary">☎️ 98916 90731</a>
-            <a href="https://wa.me/919592512000" class="btn btn-primary">💬 WhatsApp</a>
-        </div>
-    </header>
 
-    <section class="hero">
-        <h1>Pure Herbal Wellness</h1>
-        <p>100% Natural Ayurvedic Products for Your Health</p>
-        <p style="color: #a8d66e; font-weight: bold;">Fast Delivery • Quality Assured • Expert Support</p>
-        <div class="buttons" style="margin-top: 20px;">
-            <a href="#order-form" class="btn btn-primary">📦 Order Now</a>
-            <a href="tel:+919592512000" class="btn btn-primary">📞 Call Us</a>
-        </div>
-    </section>
-
-    <div class="container">
-        <section class="contact-section">
-            <h2>📞 Contact & Support</h2>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h3>🏢 Main Office</h3>
-                    <p><strong>Sales:</strong></p>
-                    <a href="tel:+919592512000">+91 95925 12000</a>
-                    <p style="margin-top: 10px; font-size: 12px; color: #999;">Available 9 AM - 9 PM</p>
-                    <p style="margin-top: 15px;"><strong>Address:</strong></p>
-                    <p>SCO-101-C, 2nd Floor, Urban Estate-2, Jalandhar, Punjab 144022</p>
-                </div>
-
-                <div class="contact-card">
-                    <h3>👨‍💼 Praveen Kumar</h3>
-                    <p style="color: #a8d66e; font-weight: bold;">Zonal Manager (Panipat)</p>
-                    <a href="tel:9017323675">90173 23675</a>
-                    <p style="margin-top: 10px; font-size: 12px; color: #999;">Haryana Region</p>
-                </div>
-
-                <div class="contact-card">
-                    <h3>👩‍💼 Kamini Mam</h3>
-                    <p style="color: #a8d66e; font-weight: bold;">Manager (TM)</p>
-                    <a href="tel:9891690731">98916 90731</a>
-                    <p style="margin-top: 10px; font-size: 12px; color: #999;">Product Support</p>
-                </div>
-
-                <div class="contact-card">
-                    <h3>💬 WhatsApp Orders</h3>
-                    <a href="https://wa.me/919592512000" target="_blank">Chat on WhatsApp</a>
-                    <p style="margin-top: 10px; font-size: 12px; color: #999;">Send product & quantity</p>
-                </div>
-
-                <div class="contact-card">
-                    <h3>📧 Email</h3>
-                    <a href="mailto:sales@pukhrajhealthcare.com">sales@pukhrajhealthcare.com</a>
-                    <p style="margin-top: 10px; font-size: 12px; color: #999;">For orders & inquiries</p>
-                </div>
-
-                <div class="contact-card">
-                    <h3>🌐 Website</h3>
-                    <a href="https://pukhrajhealthcare.com" target="_blank">pukhrajhealthcare.com</a>
-                    <p style="margin-top: 10px; font-size: 12px; color: #999;">Visit us online</p>
-                </div>
+<!-- ── NAVIGATION ── -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">
+            <span class="logo-leaf">🌿</span>
+            <div class="logo-text">
+                <span>PUKHRAJ</span>
+                <span>Health Care</span>
             </div>
-        </section>
-
-        <section class="products">
-            <h2>🛒 Our Products</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <h3>Aloe Premium Plus</h3>
-                    <p>500 ml</p>
-                    <div class="price">₹ 703</div>
-                    <button class="order-btn" onclick="orderProduct('Aloe Premium Plus - ₹703')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Noni Ultra Premium</h3>
-                    <p>500 ml</p>
-                    <div class="price">₹ 713</div>
-                    <button class="order-btn" onclick="orderProduct('Noni Ultra Premium - ₹713')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>10+ DB Control</h3>
-                    <p>500 ml</p>
-                    <div class="price">₹ 713</div>
-                    <button class="order-btn" onclick="orderProduct('10+ DB Control - ₹713')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Pachn Ras</h3>
-                    <p>500 ml</p>
-                    <div class="price">₹ 375</div>
-                    <button class="order-btn" onclick="orderProduct('Pachn Ras - ₹375')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Wheat Grass Powder</h3>
-                    <p>105 gm</p>
-                    <div class="price">₹ 1,200</div>
-                    <button class="order-btn" onclick="orderProduct('Wheat Grass Powder - ₹1200')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Ortho Specialist</h3>
-                    <p>Capsule</p>
-                    <div class="price">₹ 550</div>
-                    <button class="order-btn" onclick="orderProduct('Ortho Specialist - ₹550')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Premium Curcumin</h3>
-                    <p>Capsule</p>
-                    <div class="price">₹ 600-650</div>
-                    <button class="order-btn" onclick="orderProduct('Premium Curcumin - ₹600-650')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Uridetox Capsule</h3>
-                    <p>Capsule</p>
-                    <div class="price">₹ 550</div>
-                    <button class="order-btn" onclick="orderProduct('Uridetox Capsule - ₹550')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>5 Tulsi Drops</h3>
-                    <p>50 ml</p>
-                    <div class="price">₹ 300-340</div>
-                    <button class="order-btn" onclick="orderProduct('5 Tulsi Drops - ₹300-340')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Ortho Care Pain Oil</h3>
-                    <p>30/100 ml</p>
-                    <div class="price">₹ 225-375</div>
-                    <button class="order-btn" onclick="orderProduct('Ortho Care Pain Oil - ₹225-375')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Aloe Vera Shampoo</h3>
-                    <p>200 ml</p>
-                    <div class="price">₹ 250-422</div>
-                    <button class="order-btn" onclick="orderProduct('Aloe Vera Shampoo - ₹250-422')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Hair Fall Control Oil</h3>
-                    <p>100 ml</p>
-                    <div class="price">₹ 275-440</div>
-                    <button class="order-btn" onclick="orderProduct('Hair Fall Control Oil - ₹275-440')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Aloe Aroma Face Wash</h3>
-                    <p>100 ml</p>
-                    <div class="price">₹ 150-400</div>
-                    <button class="order-btn" onclick="orderProduct('Aloe Aroma Face Wash - ₹150-400')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Aloe Vera Skin Gel</h3>
-                    <p>100 ml</p>
-                    <div class="price">₹ 300-667</div>
-                    <button class="order-btn" onclick="orderProduct('Aloe Vera Skin Gel - ₹300-667')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Brightening Skin Gel</h3>
-                    <p>100 ml</p>
-                    <div class="price">₹ 300-534</div>
-                    <button class="order-btn" onclick="orderProduct('Brightening Skin Gel - ₹300-534')">Order</button>
-                </div>
-                <div class="product-card">
-                    <h3>Skin Lotion Herbal-55</h3>
-                    <p>15/25 ml</p>
-                    <div class="price">₹ 225</div>
-                    <button class="order-btn" onclick="orderProduct('Skin Lotion Herbal-55 - ₹225')">Order</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="form-section" id="order-form">
-            <h2 style="color: #2d5016; text-align: center; margin-bottom: 25px;">📝 Place Your Order</h2>
-            <form onsubmit="submitForm(event)">
-                <div class="form-group">
-                    <label>Your Name *</label>
-                    <input type="text" name="name" required placeholder="Full Name">
-                </div>
-                <div class="form-group">
-                    <label>Phone Number *</label>
-                    <input type="tel" name="phone" required placeholder="+91 XXXXXXXXXX">
-                </div>
-                <div class="form-group">
-                    <label>City *</label>
-                    <input type="text" name="city" required placeholder="Your City">
-                </div>
-                <div class="form-group">
-                    <label>Product *</label>
-                    <input type="text" name="product" id="productInput" required placeholder="Product Name">
-                </div>
-                <div class="form-group">
-                    <label>Quantity *</label>
-                    <input type="number" name="quantity" required min="1" placeholder="Quantity">
-                </div>
-                <div class="form-group">
-                    <label>Address</label>
-                    <textarea name="address" placeholder="Delivery Address"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">✅ Submit Order</button>
-            </form>
-        </section>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#order-form">Order</a></li>
+        </ul>
+        <a href="tel:+919592512000" class="nav-cta">📞 Call Now</a>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
     </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#products" onclick="toggleMenu()">🛒 Products</a>
+        <a href="#about" onclick="toggleMenu()">🏢 About Us</a>
+        <a href="#contact" onclick="toggleMenu()">📞 Contact</a>
+        <a href="#order-form" onclick="toggleMenu()">📝 Place Order</a>
+        <a href="https://wa.me/919592512000" target="_blank">💬 WhatsApp Us</a>
+    </div>
+</nav>
 
-    <footer>
-        <p><strong>🌿 PUKHRAJ HEALTH CARE PVT LTD</strong></p>
-        <p>Pure Herbal Ayurvedic Products | Fast Delivery | Quality Assured</p>
-        <p>&copy; 2024 All Rights Reserved</p>
-    </footer>
+<!-- ── CALL BANNER ── -->
+<div class="call-banner">
+    <div class="call-banner-inner">
+        <a href="tel:+919592512000" class="call-pill">📞 +91 95925 12000</a>
+        <a href="tel:9017323675" class="call-pill">📲 90173 23675</a>
+        <a href="tel:9891690731" class="call-pill">☎️ 98916 90731</a>
+        <a href="https://wa.me/919592512000" class="call-pill" target="_blank">💬 WhatsApp Order</a>
+    </div>
+</div>
 
-    <a href="https://wa.me/919592512000" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+<!-- ── HERO ── -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <span class="hero-badge">100% Natural & Herbal</span>
+            <h1>Pure Ayurvedic<br><span>Wellness</span> for Life</h1>
+            <p>Discover the power of nature with Pukhraj's premium herbal products — crafted with ancient Ayurvedic wisdom and modern science for your health and wellbeing.</p>
+            <div class="hero-btns">
+                <a href="#products" class="btn-hero-primary">🛒 Shop Products</a>
+                <a href="#order-form" class="btn-hero-secondary">📦 Place Order</a>
+            </div>
+        </div>
+        <div class="hero-img-wrap">
+            <img src="images/brand-banner.jpg" alt="Pukhraj Pure Herbal Products">
+        </div>
+    </div>
+</section>
 
-    <script>
-        function orderProduct(product) {
-            document.getElementById('productInput').value = product;
-            document.getElementById('order-form').scrollIntoView({behavior: 'smooth'});
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+    <div class="trust-inner">
+        <div class="trust-item"><span class="trust-icon">🚚</span> Fast Delivery</div>
+        <div class="trust-item"><span class="trust-icon">✅</span> Quality Assured</div>
+        <div class="trust-item"><span class="trust-icon">🌿</span> 100% Natural</div>
+        <div class="trust-item"><span class="trust-icon">👨‍⚕️</span> Expert Support</div>
+        <div class="trust-item"><span class="trust-icon">🔬</span> Lab Tested</div>
+    </div>
+</div>
+
+<!-- ── PRODUCTS ── -->
+<section class="section" id="products">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Products</h2>
+            <p>Authentic Ayurvedic remedies for your health, hair, and skin</p>
+            <div class="underline"></div>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProducts('all', this)">All Products</button>
+            <button class="filter-btn" onclick="filterProducts('drinks', this)">Health Drinks</button>
+            <button class="filter-btn" onclick="filterProducts('supplements', this)">Supplements</button>
+            <button class="filter-btn" onclick="filterProducts('pain', this)">Pain Care</button>
+            <button class="filter-btn" onclick="filterProducts('hair', this)">Hair Care</button>
+            <button class="filter-btn" onclick="filterProducts('skin', this)">Skin Care</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+            <!-- Health Drinks -->
+            <div class="product-card" data-cat="drinks">
+                <div class="product-img-wrap">
+                    <span class="product-category-tag">Health Drinks</span>
+                    <img src="images/aloe-premium-plus.jpg" alt="Aloe Premium Plus">
+                </div>
+                <div class="product-body">
+                    <h3>Aloe Premium Plus</h3>
+                    <div class="size">500 ml | Herbs, Fruits &amp; Berries</div>
+                    <p class="desc">A powerful blend of Aloe Vera with herbs, fruits and berries for immunity, digestion and overall vitality.</p>
+                    <div class="product-footer">
+                        <div class="price">₹703</div>
+                        <button class="order-btn" onclick="orderProduct('Aloe Premium Plus (500ml) - ₹703')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-cat="drinks">
+                <div class="product-img-wrap">
+                    <span class="product-category-tag">Health Drinks</span>
+                    <img src="images/noni-ultra-premium.jpg" alt="Noni Ultra Premium Plus">
+                </div>
+                <div class="product-body">
+                    <h3>Noni Ultra Premium Plus</h3>
+                    <div class="size">500 ml | Enriched with 15 Super Herbs</div>
+                    <p class="desc">Health &amp; Brain Booster enriched with 15 super herbs — ideal for students and adults for energy and mental clarity.</p>
+                    <div class="product-footer">
+                        <div class="price">₹713</div>
+                        <button class="order-btn" onclick="orderProduct('Noni Ultra Premium Plus (500ml) - ₹713')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-cat="drinks">
+                <div class="product-img-wrap">
+                    <span class="product-category-tag">Health Drinks</span>
+                    <img src="images/db-control.jpg" alt="10+ DB Control">
+                </div>
+                <div class="product-body">
+                    <h3>10+ DB Control</h3>
+                    <div class="size">500 ml | 10 Powerful Herbs</div>
+                    <p class="desc">Specially formulated with 10 powerful herbs to help control blood sugar levels naturally and effectively.</p>
+                    <div class="product-footer">
+                        <div class="price">₹713</div>
+                        <button class="order-btn" onclick="orderProduct('10+ DB Control (500ml) - ₹713')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-cat="drinks">
+                <div class="product-img-wrap">
+                    <span class="product-category-tag">Health Drinks</span>
+                    <img src="images/pachn-ras.jpg" alt="Pachn Ras">
+                </div>
+                <div class="product-body">
+                    <h3>Pachn Ras</h3>
+                    <div class="size">500 ml | Feel Light</div>
+                    <p class="desc">A herbal digestive tonic that controls poor digestion and helps you feel light and active all day long.</p>
+                    <div class="product-footer">
+                        <div class="price">₹375</div>
+                        <button class="order-btn" onclick="orderProduct('Pachn Ras (500ml) - ₹375')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Supplements -->
+            <div class="product-card" data-cat="supplements">
+                <div class="product-img-wrap">
+                    <span class="product-category-tag">Supplements</span>
+                    <img src="images/wheatgrass-powder.jpg" alt="Wheatgrass Powder">
+                </div>
+                <div class="product-body">
+                    <h3>Premium Wheatgrass Powder</h3>
+                    <div class="size">105 gm | Natural Multivitamin</div>
+                    <p class="desc">Green powder of nature — a natural multivitamin packed with chlorophyll, vitamins and minerals for cellular health.</p>
+                    <div class="product-footer">
+                        <div class="price">₹1,200</div>
+                        <button class="order-btn" onclick="orderProduct('Premium Wheatgrass Powder (105gm) - ₹1200')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-cat="supplements">
+                <div class="product-img-wrap">
+                    <span class="product-category-tag">Supplements</span>
+                    <img src="images/premium-curcumin.jpg" alt="Premium Curcumin">
+                </div>
+                <div class="product-body">
+                    <h3>Premium Curcumin</h3>
+                    <div class="size">Capsule | With Piperine</div>
+                    <p class="desc">Antioxidant, Detoxifier &amp; Anti-inflammatory — enhanced with piperine for maximum absorption of curcumin.</p>
+                    <div class="product-footer">
+                        <div class="price">₹600</div>
+                        <button class="order-btn" onclick="orderProduct('Premium Curcumin (Capsule) - ₹600')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-cat="supplements">
+                <div class="product-img-wrap" style="background: #f0f4ff;">
+                    <span class="product-category-tag">Supplements</span>
+                    <img src="images/pachn-ras.jpg" alt="5 Tulsi Drops" style="filter: hue-rotate(90deg);">
+                </div>
+                <div class="product-body">
+                    <h3>5 Tulsi Drops</h3>
+                    <div class="size">50 ml | Immunity Booster</div>
+                    <p class="desc">Powerful blend of 5 varieties of Tulsi to boost immunity, relieve stress, and support respiratory health.</p>
+                    <div class="product-footer">
+                        <div class="price">₹300</div>
+                        <button class="order-btn" onclick="orderProduct('5 Tulsi Drops (50ml) - ₹300')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-cat="supplements">
+                <div class="product-img-wrap" style="background: #f0f0ff;">
+                    <span class="product-category-tag">Supplements</span>
+                    <img src="images/premium-curcumin.jpg" alt="Uridetox Capsule" style="filter: hue-rotate(180deg) brightness(0.9);">
+                </div>
+                <div class="product-body">
+                    <h3>Uridetox Capsule</h3>
+                    <div class="size">Capsule | Kidney & UTI Support</div>
+                    <p class="desc">Herbal capsule formulated to detoxify the urinary system, support kidney health and prevent urinary tract infections.</p>
+                    <div class="product-footer">
+                        <div class="price">₹550</div>
+                        <button class="order-btn" onclick="orderProduct('Uridetox Capsule - ₹550')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pain Care -->
+            <div class="product-card" data-cat="pain">
+                <div class="product-img-wrap">
+                    <span class="product-category-tag">Pain Care</span>
+                    <img src="images/ortho-care-oil.jpg" alt="Ortho Care Pain Oil">
+                </div>
+                <div class="product-body">
+                    <h3>Ortho Care Pain Relief Oil</h3>
+                    <div class="size">30 ml / 100 ml</div>
+                    <p class="desc">Fast-acting herbal pain relief oil for joints, muscles and back pain. Penetrates deep for quick relief.</p>
+                    <div class="product-footer">
+                        <div class="price">₹225</div>
+                        <button class="order-btn" onclick="orderProduct('Ortho Care Pain Relief Oil - ₹225')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-cat="pain">
+                <div class="product-img-wrap" style="background: #fff0f0;">
+                    <span class="product-category-tag">Pain Care</span>
+                    <img src="images/ortho-care-oil.jpg" alt="Ortho Specialist" style="filter: hue-rotate(120deg);">
+                </div>
+                <div class="product-body">
+                    <h3>Ortho Specialist</h3>
+                    <div class="size">Capsule | Joint Support</div>
+                    <p class="desc">Advanced herbal capsule formula for joint health, bone strength, and relief from arthritis and inflammation.</p>
+                    <div class="product-footer">
+                        <div class="price">₹550</div>
+                        <button class="order-btn" onclick="orderProduct('Ortho Specialist (Capsule) - ₹550')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hair Care -->
+            <div class="product-card" data-cat="hair">
+                <div class="product-img-wrap">
+                    <span class="product-category-tag">Hair Care</span>
+                    <img src="images/hair-care.jpg" alt="KB Hair Oil & Scalp Therapy Shampoo">
+                </div>
+                <div class="product-body">
+                    <h3>KB Hair Oil</h3>
+                    <div class="size">100 ml | Natural Keratin Booster</div>
+                    <p class="desc">Complete hair solution with Natural Keratin Booster — strengthens roots, reduces breakage, and adds shine.</p>
+                    <div class="product-footer">
+                        <div class="price">₹275</div>
+                        <button class="order-btn" onclick="orderProduct('KB Hair Oil (100ml) - ₹275')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-cat="hair">
+                <div class="product-img-wrap">
+                    <span class="product-category-tag">Hair Care</span>
+                    <img src="images/hair-care.jpg" alt="Scalp Therapy Shampoo">
+                </div>
+                <div class="product-body">
+                    <h3>Scalp Therapy Shampoo</h3>
+                    <div class="size">200 ml | Aloe Vera + Herbs</div>
+                    <p class="desc">Shampoo + Conditioner for all hair types. Aloe Vera and herb-enriched formula for silky, strong hair.</p>
+                    <div class="product-footer">
+                        <div class="price">₹250</div>
+                        <button class="order-btn" onclick="orderProduct('Scalp Therapy Shampoo (200ml) - ₹250')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skin Care -->
+            <div class="product-card" data-cat="skin">
+                <div class="product-img-wrap">
+                    <span class="product-category-tag">Skin Care</span>
+                    <img src="images/aloe-aroma-face-wash.jpg" alt="Aloe Aroma Face Wash">
+                </div>
+                <div class="product-body">
+                    <h3>Aloe Aroma Face Wash</h3>
+                    <div class="size">100 ml | Age-Defence</div>
+                    <p class="desc">Skin pore tightening formula with day &amp; night protection from acne, dirt &amp; pollution. For all skin types.</p>
+                    <div class="product-footer">
+                        <div class="price">₹150</div>
+                        <button class="order-btn" onclick="orderProduct('Aloe Aroma Face Wash (100ml) - ₹150')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-cat="skin">
+                <div class="product-img-wrap">
+                    <span class="product-category-tag">Skin Care</span>
+                    <img src="images/herbal-55-skin-lotion.jpg" alt="Herbal 55 Skin Lotion">
+                </div>
+                <div class="product-body">
+                    <h3>Herbal 55 Skin Lotion</h3>
+                    <div class="size">15 ml / 25 ml | Pure Herbs</div>
+                    <p class="desc">Prepared from pure herbs for all skin types. Deeply moisturizes, brightens and protects skin naturally.</p>
+                    <div class="product-footer">
+                        <div class="price">₹225</div>
+                        <button class="order-btn" onclick="orderProduct('Herbal 55 Skin Lotion - ₹225')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-cat="skin">
+                <div class="product-img-wrap">
+                    <span class="product-category-tag">Skin Care</span>
+                    <img src="images/rays-block.jpg" alt="Rays Block Sun Protection Lotion">
+                </div>
+                <div class="product-body">
+                    <h3>Rays Block</h3>
+                    <div class="size">Sun Protection Lotion | Skin Brightening</div>
+                    <p class="desc">Sun protection lotion with skin brightening formula — shields against UV rays while improving skin tone.</p>
+                    <div class="product-footer">
+                        <div class="price">₹300</div>
+                        <button class="order-btn" onclick="orderProduct('Rays Block Sun Protection Lotion - ₹300')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-cat="skin">
+                <div class="product-img-wrap" style="background: #f0fff4;">
+                    <span class="product-category-tag">Skin Care</span>
+                    <img src="images/aloe-aroma-face-wash.jpg" alt="Aloe Vera Skin Gel" style="filter: hue-rotate(60deg);">
+                </div>
+                <div class="product-body">
+                    <h3>Aloe Vera Skin Gel</h3>
+                    <div class="size">100 ml</div>
+                    <p class="desc">Pure aloe vera gel that soothes, hydrates and repairs skin. Ideal for after-sun care, cuts, and daily moisturizing.</p>
+                    <div class="product-footer">
+                        <div class="price">₹300</div>
+                        <button class="order-btn" onclick="orderProduct('Aloe Vera Skin Gel (100ml) - ₹300')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="section about-section" id="about">
+    <div class="container">
+        <div class="about-inner">
+            <div class="about-img">
+                <img src="images/company.jpg" alt="Pukhraj Organic India Facility">
+            </div>
+            <div class="about-content">
+                <h2>About Pukhraj Health Care</h2>
+                <p>Pukhraj Health Care Pvt. Ltd. is a trusted name in pure herbal Ayurvedic wellness, rooted in the ancient wisdom of India. Our state-of-the-art manufacturing facility at Pukhraj Organic India produces a wide range of natural health, hair, and skincare products.</p>
+                <p>Every product is crafted with carefully sourced herbs, tested for purity, and formulated to bring you the best of nature with the assurance of modern quality standards.</p>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="num">16+</div>
+                        <div class="label">Premium Products</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="num">100%</div>
+                        <div class="label">Natural Ingredients</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="num">Pan</div>
+                        <div class="label">India Delivery</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="num">9 AM</div>
+                        <div class="label">to 9 PM Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="section contact-section" id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact & Support</h2>
+            <p>Our team is here to help you — reach out anytime</p>
+            <div class="underline"></div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="icon">🏢</div>
+                <h3>Main Office</h3>
+                <div class="role">Sales & Inquiries</div>
+                <a href="tel:+919592512000">+91 95925 12000</a>
+                <p>SCO-101-C, 2nd Floor, Urban Estate-2, Jalandhar, Punjab 144022</p>
+                <p>Available 9 AM – 9 PM</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="icon">👨‍💼</div>
+                <h3>Praveen Kumar</h3>
+                <div class="role">Zonal Manager – Panipat</div>
+                <a href="tel:9017323675">90173 23675</a>
+                <p>Haryana Region</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="icon">👩‍💼</div>
+                <h3>Kamini Mam</h3>
+                <div class="role">Manager (TM)</div>
+                <a href="tel:9891690731">98916 90731</a>
+                <p>Product Support</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="icon">💬</div>
+                <h3>WhatsApp Orders</h3>
+                <div class="role">Instant Ordering</div>
+                <a href="https://wa.me/919592512000" target="_blank">Chat on WhatsApp</a>
+                <p>Send product name & quantity</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="icon">📧</div>
+                <h3>Email Us</h3>
+                <div class="role">Orders & Inquiries</div>
+                <a href="mailto:sales@pukhrajhealthcare.com">sales@pukhrajhealthcare.com</a>
+                <p>Response within 24 hours</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="icon">🌐</div>
+                <h3>Website</h3>
+                <div class="role">Online Presence</div>
+                <a href="https://pukhrajhealthcare.com" target="_blank">pukhrajhealthcare.com</a>
+                <p>Visit us online</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── ORDER FORM ── -->
+<section class="form-section" id="order-form">
+    <div class="form-card">
+        <h2>📦 Place Your Order</h2>
+        <p class="sub">Fill the form below and we'll confirm your order via WhatsApp</p>
+        <form onsubmit="submitForm(event)">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="fname">Full Name *</label>
+                    <input type="text" id="fname" name="name" required placeholder="Your full name">
+                </div>
+                <div class="form-group">
+                    <label for="fphone">Phone Number *</label>
+                    <input type="tel" id="fphone" name="phone" required placeholder="+91 XXXXXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label for="fcity">City *</label>
+                    <input type="text" id="fcity" name="city" required placeholder="Your city">
+                </div>
+                <div class="form-group">
+                    <label for="fqty">Quantity *</label>
+                    <input type="number" id="fqty" name="quantity" required min="1" placeholder="1">
+                </div>
+                <div class="form-group full">
+                    <label for="fproduct">Product *</label>
+                    <select id="fproduct" name="product" required>
+                        <option value="">-- Select a product --</option>
+                        <optgroup label="Health Drinks">
+                            <option>Aloe Premium Plus (500ml) - ₹703</option>
+                            <option>Noni Ultra Premium Plus (500ml) - ₹713</option>
+                            <option>10+ DB Control (500ml) - ₹713</option>
+                            <option>Pachn Ras (500ml) - ₹375</option>
+                        </optgroup>
+                        <optgroup label="Supplements">
+                            <option>Premium Wheatgrass Powder (105gm) - ₹1200</option>
+                            <option>Premium Curcumin (Capsule) - ₹600</option>
+                            <option>5 Tulsi Drops (50ml) - ₹300</option>
+                            <option>Uridetox Capsule - ₹550</option>
+                        </optgroup>
+                        <optgroup label="Pain Care">
+                            <option>Ortho Care Pain Relief Oil - ₹225</option>
+                            <option>Ortho Specialist (Capsule) - ₹550</option>
+                        </optgroup>
+                        <optgroup label="Hair Care">
+                            <option>KB Hair Oil (100ml) - ₹275</option>
+                            <option>Scalp Therapy Shampoo (200ml) - ₹250</option>
+                        </optgroup>
+                        <optgroup label="Skin Care">
+                            <option>Aloe Aroma Face Wash (100ml) - ₹150</option>
+                            <option>Herbal 55 Skin Lotion - ₹225</option>
+                            <option>Rays Block Sun Protection Lotion - ₹300</option>
+                            <option>Aloe Vera Skin Gel (100ml) - ₹300</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group full">
+                    <label for="faddress">Delivery Address</label>
+                    <textarea id="faddress" name="address" placeholder="Full delivery address (street, city, state, PIN)"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">
+                <span>✅</span> Submit Order via WhatsApp
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-leaf">🌿</span>
+                <h3>Pukhraj Health Care Pvt. Ltd.</h3>
+                <p>Pure Herbal Ayurvedic Products crafted with nature's finest ingredients. Trusted by thousands for health, hair, and skin wellness across India.</p>
+            </div>
+            <div>
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#products">Health Drinks</a></li>
+                    <li><a href="#products">Supplements</a></li>
+                    <li><a href="#products">Pain Care</a></li>
+                    <li><a href="#products">Hair Care</a></li>
+                    <li><a href="#products">Skin Care</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+919592512000">+91 95925 12000</a></li>
+                    <li><a href="tel:9017323675">90173 23675</a></li>
+                    <li><a href="https://wa.me/919592512000" target="_blank">WhatsApp Us</a></li>
+                    <li><a href="mailto:sales@pukhrajhealthcare.com">Email Us</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pukhraj Health Care Pvt. Ltd. — Pure Herbal Ayurvedic Products | All Rights Reserved</p>
+            <p style="margin-top:6px;">SCO-101-C, 2nd Floor, Urban Estate-2, Jalandhar, Punjab 144022</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ── WHATSAPP FLOAT ── -->
+<a href="https://wa.me/919592512000" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    💬
+    <span class="whatsapp-pulse"></span>
+</a>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('open');
+    }
+
+    function filterProducts(cat, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.product-card').forEach(card => {
+            if (cat === 'all' || card.dataset.cat === cat) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    }
+
+    function orderProduct(product) {
+        const sel = document.getElementById('fproduct');
+        for (let i = 0; i < sel.options.length; i++) {
+            if (sel.options[i].text === product) {
+                sel.selectedIndex = i;
+                break;
+            }
         }
-        function submitForm(event) {
-            event.preventDefault();
-            const name = document.querySelector('input[name="name"]').value;
-            const phone = document.querySelector('input[name="phone"]').value;
-            const product = document.querySelector('input[name="product"]').value;
-            const quantity = document.querySelector('input[name="quantity"]').value;
-            const city = document.querySelector('input[name="city"]').value;
-            const msg = `🛒 ORDER REQUEST\n👤 Name: ${name}\n📱 Phone: ${phone}\n🏙️ City: ${city}\n📦 Product: ${product}\n📊 Qty: ${quantity}`;
-            window.open(`https://wa.me/919592512000?text=${encodeURIComponent(msg)}`, '_blank');
-            event.target.reset();
+        document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function submitForm(event) {
+        event.preventDefault();
+        const name = document.getElementById('fname').value;
+        const phone = document.getElementById('fphone').value;
+        const city = document.getElementById('fcity').value;
+        const product = document.getElementById('fproduct').value;
+        const qty = document.getElementById('fqty').value;
+        const address = document.getElementById('faddress').value;
+        const msg = `🛒 *ORDER REQUEST — Pukhraj Health Care*\n\n👤 *Name:* ${name}\n📱 *Phone:* ${phone}\n🏙️ *City:* ${city}\n📦 *Product:* ${product}\n📊 *Qty:* ${qty}${address ? '\n🏠 *Address:* ' + address : ''}`;
+        window.open(`https://wa.me/919592512000?text=${encodeURIComponent(msg)}`, '_blank');
+        event.target.reset();
+    }
+
+    document.addEventListener('click', function(e) {
+        const menu = document.getElementById('mobileMenu');
+        const nav = document.querySelector('nav');
+        if (menu.classList.contains('open') && !nav.contains(e.target)) {
+            menu.classList.remove('open');
         }
-    </script>
+    });
+</script>
 </body>
 </html>
