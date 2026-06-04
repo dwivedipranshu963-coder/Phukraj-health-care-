@@ -11,19 +11,19 @@
 <meta name="robots" content="index, follow">
 <meta name="googlebot" content="index, follow">
 <meta name="google-site-verification" content="p9lsCtrq-2J1l5_KAuL0W3IMiMfM5goqGrBh5Tn0C3A" />
-<link rel="canonical" href="https://dwivedipranshu963-coder.github.io/Phukraj-health-care-/">
+<link rel="canonical" href="https://phukrajpraveen.github.io/phukrajhealthindia/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Phukrajhealthindia | Pure Herbal Ayurvedic Products Since 1991">
 <meta property="og:description" content="Premium 100% Natural Ayurvedic products since 1991. Fast delivery across India.">
-<meta property="og:image" content="https://dwivedipranshu963-coder.github.io/Phukraj-health-care-/images/brand-banner.jpg">
-<meta property="og:url" content="https://dwivedipranshu963-coder.github.io/Phukraj-health-care-/">
+<meta property="og:image" content="https://phukrajpraveen.github.io/phukrajhealthindia/images/brand-banner.jpg">
+<meta property="og:url" content="https://phukrajpraveen.github.io/phukrajhealthindia/">
 
 <script type="application/ld+json">
 {
   "@context":"https://schema.org","@type":"LocalBusiness",
   "name":"Phukrajhealthindia Pvt. Ltd.","foundingDate":"1991",
   "description":"Pure Herbal Ayurvedic health, hair and skin care products since 1991.",
-  "url":"https://dwivedipranshu963-coder.github.io/Phukraj-health-care-/",
+  "url":"https://phukrajpraveen.github.io/phukrajhealthindia/",
   "telephone":"+919017323675","email":"sales@pukhrajhealthcare.com",
   "address":{"@type":"PostalAddress","streetAddress":"SCO-101-C, 2nd Floor, Urban Estate-2","addressLocality":"Jalandhar","addressRegion":"Punjab","postalCode":"144022","addressCountry":"IN"},
   "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"21:00"},
@@ -321,9 +321,20 @@ section{position:relative;z-index:1;padding:80px 40px}
   box-shadow:0 4px 15px rgba(200,146,42,0.4);
 }
 .card-body{padding:18px 20px 20px}
-.card-body h3{font-size:16px;font-weight:900;color:#fff;margin-bottom:3px;letter-spacing:.3px}
-.card-body .size{font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-.card-body .desc{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.55;margin-bottom:16px;min-height:48px}
+.card-body h3{font-size:18px;font-weight:900;color:#fff;margin-bottom:4px;letter-spacing:.3px}
+.card-body .size{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:8px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.card-body .desc{font-size:13.5px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:16px;min-height:48px}
+
+/* ── IMAGE MODAL ── */
+.img-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s;backdrop-filter:blur(10px)}
+.img-modal-overlay.open{opacity:1;pointer-events:all}
+.img-modal-box{position:relative;max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center;gap:16px}
+.img-modal-box img{max-width:85vw;max-height:75vh;object-fit:contain;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,0.9),0 0 60px rgba(200,146,42,0.2);border:1px solid rgba(200,146,42,0.2)}
+.img-modal-name{color:var(--gold3);font-size:20px;font-weight:900;letter-spacing:.5px;text-align:center}
+.img-modal-price{color:var(--gold2);font-size:28px;font-weight:900}
+.img-modal-close{position:fixed;top:20px;right:20px;background:rgba(200,146,42,0.15);border:1px solid rgba(200,146,42,0.4);color:var(--gold2);width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center}
+.img-modal-close:hover{background:var(--gold);color:#0a1a0a}
+.card-img img{cursor:zoom-in}
 .card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .price{font-size:22px;font-weight:900;
   background:linear-gradient(135deg,var(--gold2),var(--gold3));
@@ -642,119 +653,119 @@ footer ul li a:hover{color:var(--gold2)}
     <div class="product-grid" id="pg">
 
       <div class="card-3d" data-cat="drinks"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img"><span class="cat-tag">Health Drink</span><img src="images/aloe-premium-plus.jpg" alt="Aloe Premium Plus"></div>
+        <div class="card-img"><span class="cat-tag">Health Drink</span><img src="images/aloe-premium-plus.jpg" alt="Aloe Premium Plus" onclick="openImgModal(this,'Aloe Premium Plus','₹713')"></div>
         <div class="card-body"><h3>Aloe Premium Plus</h3><div class="size">500 ml · Herbs, Fruits &amp; Berries</div>
         <p class="desc">Daily wellness drink with Aloe Vera, herbs, fruits and berries — boosts immunity, aids digestion and promotes total vitality.</p>
         <div class="card-foot"><span class="price">₹713</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Aloe Premium Plus (500ml)','₹713',713,'images/aloe-premium-plus.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Aloe Premium Plus (500ml) - ₹713')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="drinks"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img"><span class="cat-tag">Health Drink</span><img src="images/noni-ultra-premium.jpg" alt="Noni Ultra Premium Plus"></div>
+        <div class="card-img"><span class="cat-tag">Health Drink</span><img src="images/noni-ultra-premium.jpg" alt="Noni Ultra Premium Plus" onclick="openImgModal(this,'Noni Ultra Premium Plus','₹713')"></div>
         <div class="card-body"><h3>Noni Ultra Premium Plus</h3><div class="size">500 ml · 15 Super Herbs</div>
         <p class="desc">Antioxidant-rich systemic health juice — Health &amp; Brain Booster enriched with 15 super herbs for students and adults.</p>
         <div class="card-foot"><span class="price">₹713</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Noni Ultra Premium Plus (500ml)','₹713',713,'images/noni-ultra-premium.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Noni Ultra Premium Plus (500ml) - ₹713')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="drinks"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img"><span class="cat-tag">Health Drink</span><img src="images/db-control.jpg" alt="10+ DB Control"></div>
+        <div class="card-img"><span class="cat-tag">Health Drink</span><img src="images/db-control.jpg" alt="10+ DB Control" onclick="openImgModal(this,'10+ DB Control','₹703')"></div>
         <div class="card-body"><h3>10+ DB Control</h3><div class="size">500 ml · 10 Powerful Herbs</div>
         <p class="desc">Specially formulated blood sugar management juice — enriched with 10 powerful herbs to help control diabetes naturally.</p>
         <div class="card-foot"><span class="price">₹703</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('10+ DB Control (500ml)','₹703',703,'images/db-control.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('10+ DB Control (500ml) - ₹703')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="drinks"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img"><span class="cat-tag">Health Drink</span><img src="images/pachn-ras.jpg" alt="Pachan Ras"></div>
+        <div class="card-img"><span class="cat-tag">Health Drink</span><img src="images/pachn-ras.jpg" alt="Pachan Ras" onclick="openImgModal(this,'Pachan Ras','₹375')"></div>
         <div class="card-body"><h3>Pachan Ras</h3><div class="size">500 ml · Feel Light</div>
         <p class="desc">Digestive health tonic syrup — controls poor digestion, relieves bloating and keeps you light and active all day.</p>
         <div class="card-foot"><span class="price">₹375</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Pachan Ras (500ml)','₹375',375,'images/pachn-ras.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Pachan Ras (500ml) - ₹375')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="supplements"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img"><span class="cat-tag">Supplement</span><img src="images/wheatgrass-powder.jpg" alt="Wheatgrass Powder"></div>
+        <div class="card-img"><span class="cat-tag">Supplement</span><img src="images/wheatgrass-powder.jpg" alt="Wheatgrass Powder" onclick="openImgModal(this,'Premium Wheatgrass Powder','₹1,200')"></div>
         <div class="card-body"><h3>Premium Wheatgrass Powder</h3><div class="size">105 gm · Natural Multivitamin</div>
         <p class="desc">Green powder of nature — packed with chlorophyll, vitamins &amp; minerals. Natural multivitamin for cellular health and energy.</p>
         <div class="card-foot"><span class="price">₹1,200</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Premium Wheatgrass Powder (105gm)','₹1200',1200,'images/wheatgrass-powder.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Premium Wheatgrass Powder (105gm) - ₹1200')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="supplements"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img"><span class="cat-tag">Supplement</span><img src="images/premium-curcumin.jpg" alt="Premium Curcumin"></div>
+        <div class="card-img"><span class="cat-tag">Supplement</span><img src="images/premium-curcumin.jpg" alt="Premium Curcumin" onclick="openImgModal(this,'Premium Curcumin','₹600')"></div>
         <div class="card-body"><h3>Premium Curcumin</h3><div class="size">Capsule · With Piperine</div>
         <p class="desc">Antioxidant, Detoxifier &amp; Anti-inflammatory — enhanced with piperine for maximum absorption and bioavailability.</p>
         <div class="card-foot"><span class="price">₹600</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Premium Curcumin (Capsule)','₹600',600,'images/premium-curcumin.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Premium Curcumin (Capsule) - ₹600')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="supplements"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img" style="background:radial-gradient(circle,rgba(100,120,200,0.12),transparent)"><span class="cat-tag">Supplement</span><img src="images/db-control.jpg" alt="5 Tulsi Drops" style="filter:hue-rotate(200deg)"></div>
+        <div class="card-img" style="background:radial-gradient(circle,rgba(100,120,200,0.12),transparent)"><span class="cat-tag">Supplement</span><img src="images/db-control.jpg" alt="5 Tulsi Drops" style="filter:hue-rotate(200deg)" onclick="openImgModal(this,'5 Tulsi Drops','₹516')"></div>
         <div class="card-body"><h3>5 Tulsi Drops</h3><div class="size">50 ml · Immunity Defense</div>
         <p class="desc">Concentrated liquid immune-boosting defense drops — blend of 5 Tulsi varieties for immunity, stress relief &amp; respiratory health.</p>
         <div class="card-foot"><span class="price">₹516</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('5 Tulsi Drops (50ml)','₹516',516,'images/db-control.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('5 Tulsi Drops (50ml) - ₹516')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="supplements"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img" style="background:radial-gradient(circle,rgba(120,80,200,0.12),transparent)"><span class="cat-tag">Supplement</span><img src="images/premium-curcumin.jpg" alt="Uridetox" style="filter:hue-rotate(180deg) brightness(.85)"></div>
+        <div class="card-img" style="background:radial-gradient(circle,rgba(120,80,200,0.12),transparent)"><span class="cat-tag">Supplement</span><img src="images/premium-curcumin.jpg" alt="Uridetox" style="filter:hue-rotate(180deg) brightness(.85)" onclick="openImgModal(this,'Uridetox Capsule','₹550')"></div>
         <div class="card-body"><h3>Uridetox Capsule</h3><div class="size">Capsule · Kidney &amp; UTI Support</div>
         <p class="desc">Herbal capsule formulated to detoxify the urinary system, support kidney health and prevent urinary tract infections.</p>
         <div class="card-foot"><span class="price">₹550</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Uridetox Capsule','₹550',550,'images/premium-curcumin.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Uridetox Capsule - ₹550')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="pain"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img"><span class="cat-tag">Pain Care</span><img src="images/ortho-care-oil.jpg" alt="Ortho Care Pain Oil"></div>
+        <div class="card-img"><span class="cat-tag">Pain Care</span><img src="images/ortho-care-oil.jpg" alt="Ortho Care Pain Oil" onclick="openImgModal(this,'Ortho Care Pain Relief Oil','₹225+')"></div>
         <div class="card-body"><h3>Ortho Care Pain Relief Oil</h3><div class="size">30 ml / 100 ml</div>
         <p class="desc">Fast-acting herbal pain relief oil for joints, muscles &amp; back pain — penetrates deep for quick and lasting relief.</p>
         <div class="card-foot"><span class="price">₹225+</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Ortho Care Pain Relief Oil','₹225',225,'images/ortho-care-oil.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Ortho Care Pain Relief Oil - ₹225+')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="pain"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img" style="background:radial-gradient(circle,rgba(200,80,80,0.1),transparent)"><span class="cat-tag">Pain Care</span><img src="images/ortho-care-oil.jpg" alt="Ortho Specialist" style="filter:hue-rotate(120deg)"></div>
+        <div class="card-img" style="background:radial-gradient(circle,rgba(200,80,80,0.1),transparent)"><span class="cat-tag">Pain Care</span><img src="images/ortho-care-oil.jpg" alt="Ortho Specialist" style="filter:hue-rotate(120deg)" onclick="openImgModal(this,'Ortho Specialist','₹550')"></div>
         <div class="card-body"><h3>Ortho Specialist</h3><div class="size">Capsule · Joint Support</div>
         <p class="desc">Advanced herbal capsule for joint health, bone strength &amp; arthritis relief — supports long-term mobility and flexibility.</p>
         <div class="card-foot"><span class="price">₹550</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Ortho Specialist (Capsule)','₹550',550,'images/ortho-care-oil.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Ortho Specialist (Capsule) - ₹550')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="hair"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img"><span class="cat-tag">Hair Care</span><img src="images/hair-care.jpg" alt="Hair Fall Control Oil"></div>
+        <div class="card-img"><span class="cat-tag">Hair Care</span><img src="images/hair-care.jpg" alt="Hair Fall Control Oil" onclick="openImgModal(this,'Herbal Hair Fall Control Oil','₹422+')"></div>
         <div class="card-body"><h3>Herbal Hair Fall Control Oil</h3><div class="size">Multiple sizes · Keratin Booster</div>
         <p class="desc">Traditional herbal formulation targeting root health — strengthens roots, reduces breakage and adds deep natural shine.</p>
         <div class="card-foot"><span class="price">₹422+</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Herbal Hair Fall Control Oil','₹422',422,'images/hair-care.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Herbal Hair Fall Control Oil - ₹422+')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="hair"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img"><span class="cat-tag">Hair Care</span><img src="images/hair-care.jpg" alt="Scalp Therapy Shampoo"></div>
+        <div class="card-img"><span class="cat-tag">Hair Care</span><img src="images/hair-care.jpg" alt="Scalp Therapy Shampoo" onclick="openImgModal(this,'Scalp Therapy Aloe Vera Shampoo','₹440')"></div>
         <div class="card-body"><h3>Scalp Therapy Aloe Vera Shampoo</h3><div class="size">250 ml · Aloe Vera + Herbs</div>
         <p class="desc">Formulated for daily hair care and scalp health — 2-in-1 shampoo &amp; conditioner for silky, strong, healthy hair.</p>
         <div class="card-foot"><span class="price">₹440</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Scalp Therapy Shampoo (250ml)','₹440',440,'images/hair-care.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Scalp Therapy Aloe Vera Shampoo (250ml) - ₹440')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="skin"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img"><span class="cat-tag">Skin Care</span><img src="images/aloe-aroma-face-wash.jpg" alt="Aloe Aroma Face Wash"></div>
+        <div class="card-img"><span class="cat-tag">Skin Care</span><img src="images/aloe-aroma-face-wash.jpg" alt="Aloe Aroma Face Wash" onclick="openImgModal(this,'Aloe Aroma Face Wash','₹400+')"></div>
         <div class="card-body"><h3>Aloe Aroma Face Wash</h3><div class="size">Multiple sizes · Age-Defence</div>
         <p class="desc">Gentle everyday facial cleanser — skin pore tightening formula with day &amp; night protection from acne, dirt &amp; pollution.</p>
         <div class="card-foot"><span class="price">₹400+</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Aloe Aroma Face Wash','₹400',400,'images/aloe-aroma-face-wash.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Aloe Aroma Face Wash - ₹400+')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="skin"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img"><span class="cat-tag">Skin Care</span><img src="images/herbal-55-skin-lotion.jpg" alt="Skin Lotion Herbal 55"></div>
+        <div class="card-img"><span class="cat-tag">Skin Care</span><img src="images/herbal-55-skin-lotion.jpg" alt="Skin Lotion Herbal 55" onclick="openImgModal(this,'Skin Lotion Herbal-55','₹340')"></div>
         <div class="card-body"><h3>Skin Lotion Herbal-55</h3><div class="size">Targeted Herbal Treatment</div>
         <p class="desc">Targeted herbal skin treatment formulation — deeply moisturizes, brightens and heals all skin types naturally with 55 herbs.</p>
         <div class="card-foot"><span class="price">₹340</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Skin Lotion Herbal-55','₹340',340,'images/herbal-55-skin-lotion.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Skin Lotion Herbal-55 - ₹340')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="skin"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img"><span class="cat-tag">Skin Care</span><img src="images/rays-block.jpg" alt="Rays Block Sun Lotion"></div>
+        <div class="card-img"><span class="cat-tag">Skin Care</span><img src="images/rays-block.jpg" alt="Rays Block Sun Lotion" onclick="openImgModal(this,'Rays Block Sun Protection Lotion','₹350+')"></div>
         <div class="card-body"><h3>Rays Block Sun Protection Lotion</h3><div class="size">Multiple sizes · UV Shield</div>
         <p class="desc">Protection against UV exposure with skin brightening formula — shields against harmful rays while improving skin tone.</p>
         <div class="card-foot"><span class="price">₹350+</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Rays Block Sun Lotion','₹350',350,'images/rays-block.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Rays Block Sun Protection Lotion - ₹350+')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="skin"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img" style="background:radial-gradient(circle,rgba(82,200,120,0.1),transparent)"><span class="cat-tag">Skin Care</span><img src="images/aloe-aroma-face-wash.jpg" alt="Aloe Vera Skin Gel" style="filter:hue-rotate(50deg)"></div>
+        <div class="card-img" style="background:radial-gradient(circle,rgba(82,200,120,0.1),transparent)"><span class="cat-tag">Skin Care</span><img src="images/aloe-aroma-face-wash.jpg" alt="Aloe Vera Skin Gel" style="filter:hue-rotate(50deg)" onclick="openImgModal(this,'Aloe Vera Skin Gel','₹400+')"></div>
         <div class="card-body"><h3>Aloe Vera Skin Gel</h3><div class="size">Multiple sizes · Pure Aloe</div>
         <p class="desc">Pure aloe formulation for hydration and skin soothing — ideal for after-sun care, minor cuts, and daily deep moisturizing.</p>
         <div class="card-foot"><span class="price">₹400+</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Aloe Vera Skin Gel','₹400',400,'images/aloe-aroma-face-wash.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Aloe Vera Skin Gel - ₹400+')" title="WhatsApp">💬</button></div></div></div>
       </div></div>
 
       <div class="card-3d" data-cat="skin"><div class="card-inner" onmousemove="tilt3d(this,event)" onmouseleave="untilt(this)">
-        <div class="card-img" style="background:radial-gradient(circle,rgba(168,100,230,0.12),transparent)"><span class="cat-tag">Skin Care</span><img src="images/herbal-55-skin-lotion.jpg" alt="Skin Therapy Premium Gel" style="filter:hue-rotate(260deg) saturate(1.3)"></div>
+        <div class="card-img" style="background:radial-gradient(circle,rgba(168,100,230,0.12),transparent)"><span class="cat-tag">Skin Care</span><img src="images/herbal-55-skin-lotion.jpg" alt="Skin Therapy Premium Gel" style="filter:hue-rotate(260deg) saturate(1.3)" onclick="openImgModal(this,'Skin Therapy Premium Gel','₹700')"></div>
         <div class="card-body"><h3>Skin Therapy Premium Gel</h3><div class="size">300 ml · Intensive Care</div>
         <p class="desc">Premium intensive care gel for skin rejuvenation — repairs, deeply nourishes and restores skin health and radiance.</p>
         <div class="card-foot"><span class="price">₹700</span><div class="card-btns"><button class="add-cart-btn" onclick="addToCart('Skin Therapy Premium Gel (300ml)','₹700',700,'images/herbal-55-skin-lotion.jpg')">🛒 Add to Cart</button><button class="quick-wa-btn" onclick="quickWA('Skin Therapy Premium Gel (300ml) - ₹700')" title="WhatsApp">💬</button></div></div></div>
@@ -886,6 +897,16 @@ footer ul li a:hover{color:var(--gold2)}
     </form>
   </div>
 </section>
+
+<!-- IMAGE MODAL -->
+<div class="img-modal-overlay" id="imgModal" onclick="closeImgModal(event)">
+  <div class="img-modal-box">
+    <img id="imgModalSrc" src="" alt="">
+    <div id="imgModalName" class="img-modal-name"></div>
+    <div id="imgModalPrice" class="img-modal-price"></div>
+  </div>
+  <button class="img-modal-close" onclick="closeImgModal()">✕</button>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -1073,6 +1094,23 @@ function sendOrder(e){
   window.open('https://wa.me/'+ORDER_WA+'?text='+encodeURIComponent(msg),'_blank');
   e.target.reset();
 }
+
+/* ── IMAGE MODAL ── */
+function openImgModal(img, name, price){
+  document.getElementById('imgModalSrc').src = img.src;
+  document.getElementById('imgModalSrc').style.filter = img.style.filter || '';
+  document.getElementById('imgModalName').textContent = name;
+  document.getElementById('imgModalPrice').textContent = price;
+  document.getElementById('imgModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeImgModal(e){
+  if(!e || e.target===document.getElementById('imgModal') || e.target.classList.contains('img-modal-close')){
+    document.getElementById('imgModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeImgModal({target:document.getElementById('imgModal')})});
 
 /* ── SCROLL REVEAL ── */
 const obs=new IntersectionObserver(entries=>{
