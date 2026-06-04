@@ -602,9 +602,14 @@
       <input class="cart-input" id="cPhone" type="tel" placeholder="Phone Number * (+91 XXXXXXXXXX)" required>
       <input class="cart-input" id="cCity" type="text" placeholder="Your City *" required>
       <input class="cart-input" id="cAddress" type="text" placeholder="Delivery Address (optional)">
+      <select class="cart-input" id="cContact">
+        <option value="919592512000">🏢 Main Office — +91 95925 12000</option>
+        <option value="919017323675">👨‍💼 Praveen Kumar (Panipat) — 90173 23675</option>
+        <option value="919891690731">👩‍💼 Kamini Mam (TM) — 98916 90731</option>
+      </select>
     </div>
     <button class="checkout-btn" onclick="checkoutWhatsApp()">
-      💬 Order via WhatsApp — Main Office
+      💬 Send Order via WhatsApp
     </button>
   </div>
 </div>
@@ -968,6 +973,13 @@
           </select>
         </div>
         <div class="fg full"><label>Delivery Address</label><textarea id="fa" placeholder="Street, City, State, PIN"></textarea></div>
+        <div class="fg full"><label>Send Order To</label>
+          <select id="fcontact">
+            <option value="919592512000">🏢 Main Office — +91 95925 12000</option>
+            <option value="919017323675">👨‍💼 Praveen Kumar (Panipat) — 90173 23675</option>
+            <option value="919891690731">👩‍💼 Kamini Mam (TM) — 98916 90731</option>
+          </select>
+        </div>
       </div>
       <button type="submit" class="submit-btn">✅ Send Order via WhatsApp</button>
     </form>
@@ -1169,11 +1181,12 @@ function checkoutWhatsApp() {
   const phone = document.getElementById('cPhone').value.trim();
   const city = document.getElementById('cCity').value.trim();
   const address = document.getElementById('cAddress').value.trim();
+  const waNum = document.getElementById('cContact').value;
   if (!name || !phone || !city) { alert('Please fill Name, Phone and City!'); return; }
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
   let items = cart.map(i => `  • ${i.name} × ${i.qty} = ₹${(i.price*i.qty).toLocaleString('en-IN')}`).join('\n');
   const msg = `🛒 *CART ORDER — Pukhraj Health Care*\n\n👤 *Name:* ${name}\n📱 *Phone:* ${phone}\n🏙️ *City:* ${city}${address?'\n🏠 *Address:* '+address:''}\n\n📦 *Order Items:*\n${items}\n\n💰 *Total: ₹${total.toLocaleString('en-IN')}*\n\nPlease confirm my order. Thank you!`;
-  window.open('https://wa.me/' + MAIN_WA + '?text=' + encodeURIComponent(msg), '_blank');
+  window.open('https://wa.me/' + waNum + '?text=' + encodeURIComponent(msg), '_blank');
   cart = [];
   updateCartUI();
   closeCart();
@@ -1193,8 +1206,9 @@ function sendOrder(e){
   const pr=document.getElementById('fpr').value;
   const q=document.getElementById('fq').value;
   const a=document.getElementById('fa').value;
+  const waNum=document.getElementById('fcontact').value;
   const msg=`🛒 *ORDER — Pukhraj Health Care*\n\n👤 *Name:* ${n}\n📱 *Phone:* ${p}\n🏙️ *City:* ${c}\n📦 *Product:* ${pr}\n📊 *Qty:* ${q}${a?'\n🏠 *Address:* '+a:''}`;
-  window.open('https://wa.me/'+MAIN_WA+'?text='+encodeURIComponent(msg),'_blank');
+  window.open('https://wa.me/'+waNum+'?text='+encodeURIComponent(msg),'_blank');
   e.target.reset();
 }
 
