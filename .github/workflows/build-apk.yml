@@ -1,0 +1,61 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'phukraj-app/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Make gradlew executable
+        run: chmod +x phukraj-app/gradlew
+        continue-on-error: true
+
+      - name: Build Debug APK
+        working-directory: phukraj-app
+        run: |
+          if [ -f gradlew ]; then
+            ./gradlew assembleDebug --no-daemon --stacktrace
+          else
+            gradle assembleDebug --no-daemon --stacktrace
+          fi
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: phukrajhealthindia-debug-apk
+          path: phukraj-app/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+
+      - name: Build Release APK (unsigned)
+        working-directory: phukraj-app
+        run: |
+          if [ -f gradlew ]; then
+            ./gradlew assembleRelease --no-daemon
+          else
+            gradle assembleRelease --no-daemon
+          fi
+
+      - name: Upload Release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: phukrajhealthindia-release-apk
+          path: phukraj-app/app/build/outputs/apk/release/*.apk
+          if-no-files-found: warn

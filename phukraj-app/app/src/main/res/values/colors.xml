@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_dark">#040c06</color>
+    <color name="green_dark">#0e3312</color>
+    <color name="green_mid">#1a5c1f</color>
+    <color name="gold">#f0b93a</color>
+    <color name="gold_dark">#c8922a</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_30">#4DFFFFFF</color>
+    <color name="whatsapp">#25d366</color>
+</resources>
